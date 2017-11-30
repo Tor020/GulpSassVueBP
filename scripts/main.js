@@ -15,33 +15,35 @@ let app2 = new Vue({
 });
 
 let app3 = new Vue({
-
   el: '#app-3',
   data: {
-// Typing app3.seen = false and the message disappears
+    // Typing app3.seen = false and the message disappears
     seen: true
   }
 });
 
 let app4 = new Vue({
   el: '#app-4',
-  data:{
+  data: {
     todos: [
-      {text: 'Learn JS'},
-      {text: 'memes'},
-      {text: 'idk other stuff 2'}
+      { text: 'Learn JS' },
+      { text: 'memes' },
+      { text: 'idk other stuff 2' }
     ]
   }
 });
 
 let app5 = new Vue({
   el: '#app-5',
-  data:{
-    message: "Ayyy it\'s me mayrio"
+  data: {
+    message: "Ayyy it's me mayrio"
   },
   methods: {
     reverseMessage: function() {
-      this.message = this.message.split('').reverse().join('')
+      this.message = this.message
+        .split('')
+        .reverse()
+        .join('');
     }
   }
 });
@@ -49,7 +51,7 @@ let app5 = new Vue({
 let app6 = new Vue({
   // v-model="message" lets it get the message thats typed into the input>
   el: '#app-6',
-  data:{
+  data: {
     message: 'Watdefuq Vue!'
   }
 });

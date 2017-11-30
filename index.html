@@ -13,13 +13,12 @@
 
 <body>
   <div class='layer'>
-    <div class="testdiv" style = "text-align:center;">
-      
-      <div class='app'>  {{ message }}  </div>
+    <div class="testdiv" style="text-align:center;">
+
+      <div class='app'> {{ message }} </div>
       <div id="app-2">
         <span v-bind:title="message">
-          Hover your mouse over me for a few seconds
-          to see my dynamically bound title!
+          Hover your mouse over me for a few seconds to see my dynamically bound title!
         </span>
       </div>
       <div id="app-3">
@@ -39,26 +38,23 @@
         <input v-model="message">
       </div>
       <div id="app-7">
-          <ol>
-            <!--
+        <ol>
+          <!--
               Now we provide each todo-item with the todo object
               it's representing, so that its content can be dynamic.
               We also need to provide each component with a "key",
               which will be explained later.
             -->
-            <todo-item
-              v-for="item in groceryList"
-              v-bind:todo="item"
-              v-bind:key="item.id">
-            </todo-item>
-          </ol>
-        </div>
+          <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+          </todo-item>
+        </ol>
+      </div>
 
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.js"></script>
     <script src='scripts/main.js'></script>
 
-  </body>
+</body>
 
 </html>
