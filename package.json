@@ -4,7 +4,9 @@
   "description": "Boilerplate for using sass with regular front end technologies",
   "main": "Gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bsync":"browser-sync start --server --files \".html, *.css\"",
+    "g":"gulp"
   },
   "author": "Kevin Coyle",
   "license": "ISC",
