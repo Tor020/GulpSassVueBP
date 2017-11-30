@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5 {
   margin: 0 auto;
   background-color: #fff; }
   .testdiv div, .testdiv p {
-    padding: 10em;
+    padding: 4em;
     transition: all 0.5s; }
     .testdiv div:hover, .testdiv p:hover {
       box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.71); }
