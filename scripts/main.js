@@ -1,72 +1,55 @@
-let anyVariableName = new Vue({
-  el: '.app', // Binds itself to an element by query selector. can use #app or .app
+let root = new Vue({
+  el: '#root', /*the element to bind this to*/
   data: {
-    message: 'Hello Vue'
-  }
-});
-// <span v-bind:title="message">
-// the v-bind ATTR is a directive any directive is prefixed with v-
-// “keep this element’s title attribute up-to-date with the message property on the Vue instance.”
-let app2 = new Vue({
-  el: '#app-2',
-  data: {
-    message: 'You loaded this page on ' + new Date().toLocaleString()
-  }
-});
-
-let app3 = new Vue({
-  el: '#app-3',
-  data: {
-    // Typing app3.seen = false and the message disappears
-    seen: true
-  }
-});
-
-let app4 = new Vue({
-  el: '#app-4',
-  data: {
-    todos: [
-      { text: 'Learn JS' },
-      { text: 'memes' },
-      { text: 'idk other stuff 2' }
-    ]
-  }
-});
-
-let app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: "Ayyy it's me mayrio"
+    // When a Vue instance is created, it adds all the properties found in its data object to Vue’s reactivity system
+    placeHolderString: '',
+    placeHolderInteger: 0,
+    placeHolderBoolean: false,
+    placeHolderArray: [],
+    placeHolderObj: {},
+    placeHolderErrorRes: null
   },
-  methods: {
-    reverseMessage: function() {
-      this.message = this.message
-        .split('')
-        .reverse()
-        .join('');
-    }
+
+//  //Instance Lifecycle Hooks
+  /*  Don’t use arrow functions on an options property or callback such as created: () => console.log(this.a) 
+      Since arrow functions are bound to the parent context, this will not be the */
+
+  beforeCreate() {    /*  Init and Injections & Reactivity  */
+
+  },
+
+  created() {    /*  Init and Injections & Reactivity  */
+    console.log('a is: ' + this.a);
+
+  },
+
+  beforeMount() { /* before create root.$el and replace "root.el" with it */
+
+  },
+
+  mounted() { /*  create root.$el and replace "root.el" with it   */
+
+  },
+
+  beforeUpdate() {  /*  When data changes but the virtual Dom hasn't re-rendered yet  */
+
+  },
+
+  updated() { /*   When data changes and the virtual Dom has re-rendered  */
+
+  },
+
+  beforeDestroy() { /*  Before Teardown watchers, child components and event listeners   */
+
+  },
+
+  destroyed() {/*  After Teardown watchers, child components and event listeners  */
+
   }
+
 });
 
-let app6 = new Vue({
-  // v-model="message" lets it get the message thats typed into the input>
-  el: '#app-6',
-  data: {
-    message: 'Watdefuq Vue!'
-  }
-});
-Vue.component('todo-item', {
-  props: ['todo'],
-  template: '<li>{{ todo.text }}</li>'
-});
+// $watch is an instance method
+root.$watch('a', function (newValue, oldValue) {
 
-var app7 = new Vue({
-  el: '#app-7',
-  data: {
-    groceryList: [
-      { id: 0, text: 'Vegetables' },
-      { id: 1, text: 'oh ok' },
-      { id: 2, text: 'Whatever else humans are supposed to eat' }
-    ]
-  }
-});
+}
