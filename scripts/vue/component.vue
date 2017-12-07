@@ -6,6 +6,42 @@
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
+html
+<progress-view inline-template> 
+
+  <div> 
+      <h1>Your Progress Through This Course Is {{completionRate}}%</h1>
+
+      <p><button @click="completionRate += 10">Update Completion</p>
+  </div>
+</progress-view>
+
+
+javascript
+Vue.component('progress-view', {
+  data(){
+    return{completionRate:50};
+  }
+});
+
+new Vue({
+  el:'#root',
+})
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+
+
+//slots are just
+
+js :<slot name ="title"</slot>
+
+html-tag version: <div slot = "title">This is the title</div>
+template version: <template slot = "title">This is the title</template>
+
+
+within the larger template in the js <slot>default content</slot> you can overwrite this in the main html
+this also works withs etting default content with named slots
+
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
