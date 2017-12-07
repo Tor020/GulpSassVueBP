@@ -9,6 +9,8 @@
   <script type="text/javascript" src="https://tor020.github.io/livejs/live.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css  ">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css">
+
 </head>
 
 <body>
@@ -16,8 +18,24 @@
   <div class='layer' id="root">
 
 
-      
+    <modal v-if="showModal" @close="showModal = false">
+      <!-- @click="$emit('close')" Custom event that corresponds to the modal in the js -->
+      <!-- if i receive an emitted close event, then set showModal = false -->
+      <!-- @is basically a custom event listener -->
+      <p> the '
+        < 'slot'>' html tag inside the template is what lets this text be here. </p>
 
+    </modal>
+
+    <button @click="showModal = true"> Show Modal</button>
+
+
+
+
+    <tor-link linkhref='#fsdf' text='ok'></tor-link>
+
+    <li><a href="https://vuejs-tips.github.io/cheatsheet/">Cheat Sheet</a></li>
+    <li><a href="http://devdocs.io/vue~2-guide/">DevDocsVue</a></li>
 
 
   </div>
